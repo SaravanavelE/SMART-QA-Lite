@@ -1,9 +1,11 @@
 # 🏭 SMART-QA Lite – Rejection Reduction Analytics Framework
 
-> A low-cost, practical data analytics system for small manufacturing industries.  
-> No paid software · No IoT sensors · No advanced IT infrastructure required.
+A low-cost, practical data analytics system for small manufacturing industries.  
 
----
+No paid software · No IoT sensors · No advanced IT infrastructure required.
+
+<img width="1919" height="910" alt="image" src="https://github.com/user-attachments/assets/d984ce56-18be-45fd-bd6e-e4ec5f8fe98c" />
+
 
 ## 📌 Project Overview
 
@@ -159,12 +161,5 @@ The dashboard opens at: http://localhost:8501
 6. **Multi-plant comparison** dashboard
 7. **Real-time mode** with periodic CSV refresh
 
----
-
-## 📄 License
-
-MIT License — Free for commercial and personal use.
-
----
 
 *Built for small manufacturers. Practical, interpretable, zero-cost.*
