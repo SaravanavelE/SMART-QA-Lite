@@ -230,7 +230,7 @@ else:
 @st.cache_data(show_spinner="Running analytics…")
 def run_all_analytics(df_json: str):
     """Cache-friendly wrapper — accepts JSON so Streamlit can hash it."""
-    _df = pd.read_json(df_json, convert_dates=["Date"])
+    _df = pd.read_json(io.StringIO(df_json),convert_dates=["Date"])
 
     summary   = compute_rejection_summary(_df)
     pareto    = compute_pareto(_df)
