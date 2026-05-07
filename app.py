@@ -228,24 +228,20 @@ else:
 # ═══════════════════════════════════════════════════════════════════════════════
 
 @st.cache_data(show_spinner="Running analytics…")
-def run_all_analytics(df_json: str):
-    """Cache-friendly wrapper — accepts JSON so Streamlit can hash it."""
-    _df = pd.read_json(io.StringIO(df_json),convert_dates=["Date"])
+def run_all_analytics(df):
 
-    summary   = compute_rejection_summary(_df)
-    pareto    = compute_pareto(_df)
-    corr_mat  = compute_correlation(_df)
-    reg       = run_regression(_df)
-    pc        = compute_pchart(_df, group_by="Date")
-    recs      = generate_recommendations(_df, summary, pareto, corr_mat, pc, reg)
-    data_sum  = get_data_summary(_df)
+    summary   = compute_rejection_summary(df)
+    pareto    = compute_pareto(df)
+    corr_mat  = compute_correlation(df)
+    reg       = run_regression(df)
+    pc        = compute_pchart(df, group_by="Date")
+    recs      = generate_recommendations(df, summary, pareto, corr_mat, pc, reg)
+    data_sum  = get_data_summary(df)
 
     return summary, pareto, corr_mat, reg, pc, recs, data_sum
 
 with st.spinner("Crunching numbers…"):
-    summary, pareto, corr_mat, reg, pc, recs, data_sum = run_all_analytics(
-        df.to_json(date_format="iso")
-    )
+    summary, pareto, corr_mat, reg, pc, recs, data_sum = run_all_analytics(df)
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
