@@ -209,7 +209,7 @@ if uploaded is not None:
         st.stop()
 elif use_demo:
     try:
-        df = load_data("sample_data.csv")
+        df = pd.read_csv("sample_data.csv")
         st.info("🎯 Demo dataset loaded. Upload your own data in the sidebar to analyse real production data.")
     except Exception as e:
         st.error(f"Could not load demo data: {e}")
